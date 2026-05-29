@@ -1,0 +1,12 @@
+{
+  "instance_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "i-0149d854bb921edd5"
+  },
+  "instance_public_ip": {
+    "sensitive": false,
+    "type": "string",
+    "value": "44.251.11.47"
+  }
+}

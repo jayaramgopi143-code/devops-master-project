@@ -1,0 +1,11 @@
+# Ignore local Terraform directories
+.terraform/
+
+# Ignore local state files
+*.tfstate
+*.tfstate.*
+
+# Ignore crash logs or variable definitions containing credentials
+*.tfvars
+*.tfvars.json
+crash.log
