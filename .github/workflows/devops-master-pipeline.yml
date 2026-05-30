@@ -6,6 +6,10 @@ on:
       - main
       - master
 
+# --- ADD THIS BLOCK TO GIVE THE PIPELINE WRITE ACCESS ---
+permissions:
+  contents: write
+
 jobs:
   build-scan-push:
     runs-on: ubuntu-latest
