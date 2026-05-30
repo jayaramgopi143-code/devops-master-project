@@ -18,15 +18,11 @@ spec:
 
     spec:
       imagePullSecrets:
-
-      - name: aws-ecr-secret
-
+        - name: aws-ecr-secret
       containers:
-      - name: devops-master-container
-
-        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-
-        imagePullPolicy: Always
+        - name: devops-master-container
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: Always
 
         ports:
         - containerPort: 3000
