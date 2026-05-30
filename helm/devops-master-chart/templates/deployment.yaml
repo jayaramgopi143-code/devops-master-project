@@ -1,21 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
-
 metadata:
   name: devops-master-app
-
 spec:
-  replicas: 1
-
+  replicas: 3
   selector:
     matchLabels:
       app: devops-master-app
-
   template:
     metadata:
       labels:
         app: devops-master-app
-
     spec:
       imagePullSecrets:
         - name: aws-ecr-secret
@@ -23,6 +18,5 @@ spec:
         - name: devops-master-container
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: Always
-
-        ports:
-        - containerPort: 3000
+          ports:
+            - containerPort: 3000
