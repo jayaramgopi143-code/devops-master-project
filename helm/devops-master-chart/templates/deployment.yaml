@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: devops-master-app
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: devops-master-app
+
+  template:
+    metadata:
+      labels:
+        app: devops-master-app
+
+    spec:
+      containers:
+      - name: devops-master-container
+
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+
+        ports:
+        - containerPort: 3000
